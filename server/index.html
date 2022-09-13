@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table tr td{
+            background:#555;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     
@@ -13,14 +19,23 @@
         <input type="number" name="number">
         <input type="submit">
     </form>
+    <div class="content"></div>
     <script>
         async function setName(){
-            let name = await fetch(`http://localhost:5000/get?name=Munis`);
+            // let name = await fetch(`http://localhost:5000/get?name=Munis`);
+            let name = await fetch(`http://localhost:5000/ExcelgetAll`);
             return name.text();    
         }
             
         setName().then(data=>{
             console.log(JSON.parse(data));
+            let res = JSON.parse(data);
+            let table = '<table>'
+            for(let k in res){
+                table+=`<tr><td>${res[k].region}</td><tr>`;
+            }
+            table+='</table>';
+            document.querySelector('.content').innerHTML = table;
         });
     </script>
 </body>

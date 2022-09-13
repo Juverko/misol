@@ -1,64 +1,72 @@
 const Excel = require('xlsx');
 const file = Excel.readFile('./file.xlsx');
+const Schema = require('./Schema');
+
+const express = require('express');
+const mongoose = require('mongoose');
+const Emitter = require('events');
+const emitter = new Emitter();
+const request = require('request');
+var cors = require('cors');
+let app = express();
+app.use(cors());
+
+app.use(express.json()); 
 
 
 
-let data = [];
 
-// for(let i =0;i<sheets.length;i++){
-    // console.log(file.SheetNames[0]);
-    console.log("++++++++++++++++++++++=============================+++++++++++++");
-    // console.info(Excel.utils.sheet_to_html(file.Sheets[file.SheetNames[0]]));
-    console.info(Excel.utils.sheet_to_json(file.Sheets[file.SheetNames[0]]));
-
-    for(let key in file.Sheets['chokadiiii']){
-        let ele = file.Sheets['chokadiiii'][key];
-        // console.log(key);
-        // console.log(ele);
-        // console.log("==========");
-        // console.log(ele);
-        // console.log(key);
-        data.push({name:key,value:ele.v})
-    }
-    // let temp = Excel.utils.sheet_to_json(file.Sheets[file.SheetNames[0]]);
-    
-    // console.log(temp);
-    // temp.forEach((res) => {
-    //     data.push(res)
-    //  })
-// } 
-// data.reduce((a,b)=>{
-//     console.log(a);
-//     // console.log(b);
-//     // a[`tr_`+b.name.slice(1)] = b;
-//     // return a;
-//     if(a[0].name!=false || a[0].name.slice(1)==b.name.slice(1)){
-
-//     }else{
-//         a[a.length] = b;
-//     }
-// },[])
-// console.log( data);
+emitter.on('send',(data,url)=>{
+    request({
+      url: 'http://localhost:5000/Excel',
+      method: 'POST',
+      json: data,
+    }, function(error, response, body){
+    //   console.log(body);
+    });
+  })
 
 
-let objMass= [];
-data.forEach(el=>{
-    for(let k in el){
-        if(el.region!=undefined){
-            // console.log(el);
-        }else{
-            // console.log(`ошибка  на этой строке ${el["№"]}`);
+
+function start() {
+    let data = [];  
+    Excel.utils.sheet_to_json(file.Sheets[file.SheetNames[0]]).forEach(el=>{
+        if(el.region && el.idReg){  
+            data.push(el);
         }
-    }
+    }) 
+    let dataskeys = []
+    for(let k in data[0]){
+        dataskeys.push([[k],[typeof(data[0][k])]]);
+    } 
+    let tableKeys = {};
+    dataskeys.map(el=>{ 
+        tableKeys[el[0][0]] = {type:el[1][0]} 
+    })  
+    const ExcelSchem = Schema.createSchem(tableKeys); 
+    app.post('/Excel',async(req,res)=>{ 
+        const body = req.body;
+        console.log(body);  
+        const post = await ExcelSchem.create(body);
+        res.status(200).json(post);
+    })
+    app.get('/ExcelgetAll',async(req,res)=>{ 
+        const post = await ExcelSchem.find();
+        res.status(200).json(post);
 })
+    
+    try{
+        mongoose.connect('mongodb://localhost:27017/?readPreference=primary&ssl=false',{useUnifiedTopology:true,useNewUrlParser:true});
+        app.listen(5000,()=>{console.log("срединение с БД успешна")})
+        data.forEach(el=>{ 
+            emitter.emit('send',el)
+        })
+    }catch(er){
+        console.log(er);
+    }
+}
+start();
 
-// const numbers = [4, 3, 3, 1, 15, 7, 4, 19, 19,19,12,12,12,17,19,19,19,19,19,19,18]; // исходный массив
 
-// // получаем объект в котором ключ - это элемент массива,
-// // а значение - количество вхождений
-// // { '4': 2, '3': 2, '1': 1 ... }
-// const countItems = numbers.reduce((acc, item) => { ;
-//      acc[`st_`+item] = item;
-//      return acc; 
-// }, {});
-// console.log(countItems); 
+// module.exports = start();
+

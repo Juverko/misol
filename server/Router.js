@@ -1,8 +1,12 @@
 const { json } = require('express');
-const Post = require('./Schema');
+const Schema = require('./Schema');
+// console.log(Schema.post);
+const Post = Schema.postSchem;
 const router = require('express').Router(); 
-const Excel = require('xlsx');
-const file = Excel.readFile('./file.xlsx');
+// const Excel = require('xlsx');
+// const file = Excel.readFile('./file.xlsx');
+// const ExcelModule = require('./Excel.js');
+
 
 router.post('/post',async(req,res)=>{
     try{

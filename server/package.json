@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Excel.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "mongoos": "^0.0.1-security",
     "mongoose": "^6.5.4",
     "nodemon": "^2.0.19",
+    "request": "^2.88.2",
     "xlsx": "^0.18.5"
   }
 }
