@@ -57,7 +57,7 @@ function start() {
     
     try{
         mongoose.connect('mongodb://localhost:27017/?readPreference=primary&ssl=false',{useUnifiedTopology:true,useNewUrlParser:true});
-        app.listen(5000,()=>{console.log("срединение с БД успешна")})
+        app.listen(6000,()=>{console.log("срединение с БД успешна")})
         data.forEach(el=>{ 
             emitter.emit('send',el)
         })
@@ -68,5 +68,5 @@ function start() {
 start();
 
 
-// module.exports = start();
+module.exports = start();
 

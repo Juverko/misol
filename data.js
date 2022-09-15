@@ -143,6 +143,7 @@ let data ={
                                                 Email: <a href="mailto:info@fmfb.com.tj">info@fmfb.com.tj</a><br>
                                                 Website:<a href="https://fmfb.tj" target="_blank">fmfb.tj</a>`]
                                             },
+                                            
                                             {
                                                 id:"0010009",
                                                 ru:"Тавхидбонк",

@@ -541,7 +541,7 @@ body>div{
     font-weight: 500;
 }
 .infoContainerMore{ 
-    width:100%;
+    width:100%; 
 }
 .infoContainerMore ul{
     width:80%;
@@ -559,9 +559,6 @@ body>div{
     background-color: transparent;
     width: 10px;
   }
-.infoContainerMore ul::-webkit-scrollbar-button {
-    /* background-color: green; */
-  }
 .infoContainerMore ul::-webkit-scrollbar-thumb {
     background-color: #356184;
     
@@ -576,7 +573,20 @@ body>div{
     text-align:center;
     width: 250px; 
 } 
-
+.infoContainerMore>div{
+    width:50%;
+    float: left;
+}
+.infoContainerMore>div{
+    width: 50%;  
+    height:350px;
+    overflow: auto;
+}
+.infoContainerMore>div>table{
+    width: 100%;  
+}
+.infoContainerMore #myChart{ 
+}
 .infoContainerMore table td{
     padding:5px;
     border:1px solid #ddd;

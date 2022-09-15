@@ -89,6 +89,12 @@ function createMore(dataType,parentBlock,data){
         if(dataType=="table"){
             let st = setTimeout(()=>{
                 let table = document.createElement("table");
+                let convas = document.querySelector(".republicInfo #myChart").cloneNode();
+                // let convas1 = document.querySelector(".republicInfo #myChart").cloneNode();
+                document.querySelector('.infoContainerMore').appendChild(document.createElement('div')).appendChild(convas);
+                // document.querySelector('.infoContainerMore').appendChild(document.createElement('div')).appendChild(convas1);
+                console.log(convas); 
+                console.log(convas);
                 if(data[0].id!=undefined /* &&  */){
                     document.querySelectorAll(".infoContainerMore li a").forEach(el=>{
                         el.addEventListener("click",function(){
@@ -112,7 +118,9 @@ function createMore(dataType,parentBlock,data){
                                         })
                                     }
                                 })
-                            }else{
+                            }else{ 
+                                creatDiag([12,2,3,7,6,11,3,4,5,6,6,7,7,8,9,3],[2022,2021,2020,2019,2018,2017,2016,2015,2014],convas);
+                                // creatDiag([2,1,8,5,1,6,1],[2022,2021,2020,2019,2018],convas1);
                                 table.innerHTML+=`<tr><td>${data[0].data[0].tableName}</td><td>${data[0].data[0].tableUnit}</td></tr>`;
                                 allData.dmain.dinfoBlock[0].data[0].data[0].data.forEach(el=>{
                                     el.data.forEach(ell=>{ 
@@ -127,13 +135,14 @@ function createMore(dataType,parentBlock,data){
                                         })          
                                     })
                                 })
+
                             }
                         })
                     })
                 }else{
                     
                 }
-                block.appendChild(table);
+                block.appendChild(document.createElement('div')).appendChild(table);
             },1000)
             
         }
@@ -247,7 +256,7 @@ function showRepubInfo(){
                     console.log(tr[i].children[0].innerText);
                     document.querySelector(".moreRepublicInfo .menu").innerHTML+=`<li><a>${tr[i].children[0].innerText}</a></li>`;
                 }
-                creatDiag([12,2,3,7,6,11],[2022,2021,2020,2019,2018]);
+                creatDiag([12,2,3,7,6,11],[2022,2021,2020,2019,2018],document.querySelector('.republicInfo #myChart'));
                     
             })
         })
@@ -312,9 +321,8 @@ function createStand(){
     return res;
 }
 
-function creatDiag(data,arguments){
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
+function creatDiag(data,arguments,parentBlock){
+    const myChart = new Chart(parentBlock, {
         type: 'bar',
         data: {
             labels:arguments,
