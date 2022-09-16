@@ -98,8 +98,11 @@ function createMore(dataType,parentBlock,data){
                 if(data[0].id!=undefined /* &&  */){
                     document.querySelectorAll(".infoContainerMore li a").forEach(el=>{
                         el.addEventListener("click",function(){
-                            if(document.querySelector(".infoContainerMore>table")){
-                                document.querySelector(".infoContainerMore>table").innerHTML = null;
+                            if(document.querySelector('.infoContainerMore canvas')){
+                                console.log(document.querySelector('.infoContainerMore'));
+                            }
+                            if(document.querySelector(".infoContainerMore>div>table")){
+                                document.querySelector(".infoContainerMore>div>table").innerHTML = null;
                             }
                             if(data[0].id.slice(0,5)=="00100"){
                                 data.forEach(dEl=>{
@@ -119,7 +122,7 @@ function createMore(dataType,parentBlock,data){
                                     }
                                 })
                             }else{ 
-                                creatDiag([12,2,3,7,6,11,3,4,5,6,6,7,7,8,9,3],[2022,2021,2020,2019,2018,2017,2016,2015,2014],convas);
+                                let top10 = [];
                                 // creatDiag([2,1,8,5,1,6,1],[2022,2021,2020,2019,2018],convas1);
                                 table.innerHTML+=`<tr><td>${data[0].data[0].tableName}</td><td>${data[0].data[0].tableUnit}</td></tr>`;
                                 allData.dmain.dinfoBlock[0].data[0].data[0].data.forEach(el=>{
@@ -128,6 +131,7 @@ function createMore(dataType,parentBlock,data){
                                             if(this.getAttribute("data-id")==el.id){
                                                 el.data.forEach(el=>{
                                                     if(ell.id==el.idBank && el.res>0){
+                                                        top10.push([ell.ru,el.res]);
                                                         table.innerHTML+=`<tr><td>${ell.ru}</td><td>${el.res}</td></tr>`;
                                                     }
                                                 })   
@@ -135,7 +139,12 @@ function createMore(dataType,parentBlock,data){
                                         })          
                                     })
                                 })
-
+                                
+                                let other = [];
+                                other =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(10,top10.sort((a,b)=>{if(a[1]>b[1])return -1}).length-1).reduce((a,b,c)=>{return a+=b[1]},0);
+                                top10 =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(0,10);
+                                top10.push(['other',other]);
+                                creatDiag(top10.map(el=>el[1]),top10.map(el=>el[0]),convas);
                             }
                         })
                     })
