@@ -99,7 +99,8 @@ function createMore(dataType,parentBlock,data){
                     document.querySelectorAll(".infoContainerMore li a").forEach(el=>{
                         el.addEventListener("click",function(){
                             if(document.querySelector('.infoContainerMore canvas')){
-                                console.log(document.querySelector('.infoContainerMore'));
+                                // console.log(document.querySelector('.infoContainerMore'));
+                                // document.querySelector('.infoContainerMore>div').innerHTML = "";
                             }
                             if(document.querySelector(".infoContainerMore>div>table")){
                                 document.querySelector(".infoContainerMore>div>table").innerHTML = null;
@@ -112,39 +113,97 @@ function createMore(dataType,parentBlock,data){
                                         }) 
                                     }
                                 })
-                            }else if(this.getAttribute("data-id")=="001301"){
-                                console.log(this);
-                                data.forEach(el=>{
-                                    if(el.id==this.getAttribute("data-id")){
-                                        el.data.forEach(ell=>{
-                                            table.innerHTML+=`<tr><td>${ell.ru}</td><td>${ell.res}</td></tr>`;
-                                        })
-                                    }
-                                })
-                            }else{ 
+                                document.querySelectorAll('.infoContainerMore>div')[0].style.display = 'none';
+                                document.querySelectorAll('.infoContainerMore>div')[1].style.width = '100%';
+                                // .style.display='none';
+                                // document.querySelector('.infoContainerMore>div').style.width = '100%';
+                            }
+                            // else if(this.getAttribute("data-id")=="001301"){
+                            //     console.log(this);
+                            //     data.forEach(el=>{
+                            //         if(el.id==this.getAttribute("data-id")){
+                            //             el.data.forEach(ell=>{
+                            //                 table.innerHTML+=`<tr><td>${ell.ru}</td><td>${ell.res}</td></tr>`;
+                            //             })
+                            //         }
+                            //     })
+                            // }
+                            else{ 
                                 let top10 = [];
                                 // creatDiag([2,1,8,5,1,6,1],[2022,2021,2020,2019,2018],convas1);
                                 table.innerHTML+=`<tr><td>${data[0].data[0].tableName}</td><td>${data[0].data[0].tableUnit}</td></tr>`;
-                                allData.dmain.dinfoBlock[0].data[0].data[0].data.forEach(el=>{
-                                    el.data.forEach(ell=>{ 
+                                let myMass ={status:null,data:[]}; 
+                                    console.log(el); 
                                         data.forEach(el=>{
                                             if(this.getAttribute("data-id")==el.id){
-                                                el.data.forEach(el=>{
-                                                    if(ell.id==el.idBank && el.res>0){
-                                                        top10.push([ell.ru,el.res]);
-                                                        table.innerHTML+=`<tr><td>${ell.ru}</td><td>${el.res}</td></tr>`;
-                                                    }
-                                                })   
+                                                console.log(el.id);
+                                                myMass.data = el.data.slice(1,el.length);
+                                                if(el.id=='001301' || el.id=='001201'){
+                                                    myMass.status ='regions';
+                                                }else if(el.id=='001300' || el.id=='001200'){
+                                                    myMass.status ='orgs'; 
+                                                }else{
+                                                    myMass.status ='res1';
+                                                }   
                                             }
-                                        })          
-                                    })
-                                })
+                                        })   
+                                console.log(myMass);
+                                switch (myMass.status) {
+                                    case'regions':{
+                                        myMass.data.forEach(el => {
+                                            table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.data[0][0]}</td></tr>`;
+                                        });
+                                        creatDiag(myMass.data.map(el=>{if(el.idBank.length<8){ return el}}).filter(el=>{return el}).map(el=>el.data[0][0]),myMass.data.map(el=>{if(el.idBank.length<8){ return el}}).filter(el=>{return el}).map(el=>el.ru),convas);
+                                        }    
+                                        break;
+                                    case'orgs':{ 
+                                        let data = [];
+                                        allData.dmain.dinfoBlock[0].data[0].data[0].data.map(el => { 
+                                            return el.data.map(ell=>{
+                                                return myMass.data.map(el => { 
+                                                    if(ell.id==el.idBank){
+                                                        el.ru = ell.ru;  
+                                                        data.push(el);
+                                                    }
+                                                }).filter(el=>{return el});
+                                            })
+                                        });
+                                        console.log(data);
+                                        data.forEach(el => { 
+                                                if(el.res>0){
+                                                    top10.push([el.ru,el.res]);
+                                                    table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.res}</td></tr>`; 
+                                                }  
+                                            let other = [];
+                                            other =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(10,top10.sort((a,b)=>{if(a[1]>b[1])return -1}).length-1).reduce((a,b,c)=>{return a+=b[1]},0);
+                                            top10 =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(0,10);
+                                            top10.push(['other',other]);
+                                            creatDiag(top10.map(el=>el[1]),top10.map(el=>el[0]),convas);
+                                        }); 
+                                        }    
+                                        break;
                                 
-                                let other = [];
-                                other =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(10,top10.sort((a,b)=>{if(a[1]>b[1])return -1}).length-1).reduce((a,b,c)=>{return a+=b[1]},0);
-                                top10 =top10.sort((a,b)=>{if(a[1]>b[1])return -1}).slice(0,10);
-                                top10.push(['other',other]);
-                                creatDiag(top10.map(el=>el[1]),top10.map(el=>el[0]),convas);
+                                    default:{
+                                        myMass.data.forEach(el => {
+                                            table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.res}</td></tr>`;
+                                        })
+                                        creatDiag(myMass.data.map(el=>el.res),myMass.data.map(el=>el.ru),convas);
+                                    }
+                                        break;
+                                }
+                                // myMass.data.forEach(el => { 
+                                //     console.log(myMass.status);
+                                //     if(myMass.status=='regions'){ 
+                                //         table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.data[0][0]}</td></tr>`;
+                                //     }else{
+                                //         table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.res}</td></tr>`;
+                                //     }
+                                //         // table.innerHTML+=`<tr><td>${el.ru}</td><td>${el.data[0][0]}</td></tr>`; 
+                                // });
+                                // console.log(myMass.data.slice(1,10).map(el=>el.data[0][0]));
+                                // console.log(myMass.data.map(el=>{if(el.idBank.length<8){ return el}}).filter(el=>{return el}));
+                                
+                                
                             }
                         })
                     })
@@ -344,15 +403,23 @@ function creatDiag(data,arguments,parentBlock){
                     'rgba(255, 206, 86, 0.7)',
                     'rgba(75, 192, 192, 0.7)',
                     'rgba(153, 102, 255, 0.7)',
-                    'rgba(255, 159, 64, 0.7)'
+                    'rgba(235, 129, 64, 0.7)',
+                    'rgba(225, 216, 186, 0.7)',
+                    'rgba(104, 152, 225, 0.7)',
+                    'rgba(25, 199, 222, 0.7)',
+                    'rgba(153, 102, 215, 0.7)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(235, 129, 64, 0.7)',
+                    'rgba(225, 216, 186, 0.7)',
+                    'rgba(104, 152, 225, 0.7)',
+                    'rgba(25, 199, 222, 0.7)',
+                    'rgba(153, 102, 215, 0.7)',
                 ],
                 borderWidth: 1
             }]
