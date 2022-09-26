@@ -579,7 +579,7 @@ body>div{
 }
 .infoContainerMore>div{
     width: 50%;  
-    height:350px;
+    height:400px;
     overflow: auto;
 }
 .infoContainerMore>div>table{

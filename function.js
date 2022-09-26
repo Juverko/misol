@@ -336,29 +336,26 @@ function hide(block){
 }
 function show(block){
     block.style.display = "block";
-}
+} 
+
 function showRegRes(){
     let regPath = document.querySelectorAll(".map path");
     regPath.forEach(path => {
         path.addEventListener("mouseover",function(){
+            // console.log(data);
             let regId = this.getAttribute("data-id");
             data.disrict.forEach(dis=>{
                 if(dis.id==regId){
                     document.querySelector(".headerCube").innerText = `Экономмические показатели ${dis.name}`
                     let disData = data.dmain.dinfoBlock[0].data[5].data[0].data[1].data;
-                    // console.log(disData);
+                    // console.log(data.dmain.dinfoBlock[0].data[4].data[0].data[1].data);
                     disData.forEach(credDis=>{
-                        // console.log(credDis.disId);
                         if(regId==credDis.disId){
-                            console.log(credDis);
                             let trs = `<tr>`;
                             credDis.data.forEach(res => {
-                                console.log(res);
-                                trs += `<td>${
-                                    res[0]}<span></span></td><td>${res[1]}<span></span></td></tr>`;
+                                trs += `<td>${res[1]}<span></span></td><td>${res[0]}<span></span></td></tr>`;
                             });
-                            // trs+="</tr>";
-                            document.querySelector("#front").innerHTML = `<p class="cardName">Credits</p><table class="cardData">${trs}</table>`;
+                            document.querySelector("#front").innerHTML = `<p class="cardName">Кредиты</p><table class="cardData">${trs}</table>`;
                         }
                     })
                     document.querySelector(".showRepInfo").addEventListener("mouseover",()=>{
@@ -408,6 +405,8 @@ function creatDiag(data,arguments,parentBlock){
                     'rgba(104, 152, 225, 0.7)',
                     'rgba(25, 199, 222, 0.7)',
                     'rgba(153, 102, 215, 0.7)',
+                    'rgba(0,255,169, 0.7)',
+                    'rgba(255,0,68, 0.7)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 0.7)',

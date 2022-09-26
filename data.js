@@ -410,17 +410,43 @@ let data ={
                                         data:[
                                             {
                                                 id:"0010020",
-                                                ru:"Мисол",
+                                                ru:`ООО ТҚХ "ОКСУС"`,
                                                 className:"",
                                                 img:"",
-                                                bgImg:"style/images/banks/26_amonat.png",
-                                                data:[`<b>ГСБ РТ "Амонатбанк"</b>
-                                                Адрес: г. Душанбе, проспект Рудаки, 105<br>
-                                                Телефон: (+992 37) 227-55-50, (+992 44) 600-90-20, 600-90-67<br>
-                                                Факс: (+992 44) 600-90-60<br>
-                                                Email:<a href="mailto:info@amonatbonk.tj">info@amonatbonk.tj </a><br>
-                                                Website:<a href="http://www.amonatbonk.tj ">www.amonatbonk.tj </a>`]
-                                            }
+                                                bgImg:"",
+                                                data:[`<b>ТҚХ "ОКСУС"</b>
+                                                Адрес: 	г. Душанбе, улица Шарк, проезд 2, дом 14<br>
+                                                Телефон: (+992) 98-591-00-10<br>
+                                                Факс: (+992) 98-591-00-10<br>
+                                                Email:<a href="mailto:	info@oxus-tj.org ">	info@oxus-tj.org</a><br>
+                                                Website:<a href="http://www.oxus.tj">www.oxus.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010021",
+                                                ru:`OOO МКО "Мехнатобод"`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:"",
+                                                data:[`<b>OOO МКО "Мехнатобод"</b>
+                                                Адрес: 	Хатлонская область, район Кушониён, джамоат “Мехнатобод”, улица Маркази, 64а<br>
+                                                Телефон: (+992) 915-10-55-55, 555-55-24-35, 917-38-10-40, 555-55-24-06, 900-90-28-23, 555-55-24-21<br>
+                                                Факс:<br>
+                                                Email:<a href="mailto:mlomehnat@yandex.com">	mlomehnat@yandex.com</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010022",
+                                                ru:`OOO МКО "Рушди Кухистон"`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:"",
+                                                data:[`<b>OOO МКО "Рушди Кухистон"</b>
+                                                Адрес:	Горно-Бадахшанская область, г.Хорог, улица Н. Курбонасейн, 41<br>
+                                                Телефон: (+992) 93 600 89 99, 93 505-92-58<br>
+                                                Факс:<br>
+                                                Email:<a href="mailto:rushdipomir@mail.ru">	rushdipomir@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
                                         ]
                                     },
                                     {
@@ -432,16 +458,342 @@ let data ={
                                         data:[
                                             {
                                                 id:"0010030",
-                                                ru:"Мисол2",
+                                                ru:"ФҚХ “Имон”",
                                                 className:"",
                                                 img:"",
-                                                bgImg:"style/images/banks/26_amonat.png",
-                                                data:[`<b>ГСБ РТ "Амонатбанк"</b>
-                                                Адрес: г. Душанбе, проспект Рудаки, 105<br>
-                                                Телефон: (+992 37) 227-55-50, (+992 44) 600-90-20, 600-90-67<br>
-                                                Факс: (+992 44) 600-90-60<br>
-                                                Email:<a href="mailto:info@amonatbonk.tj">info@amonatbonk.tj </a><br>
-                                                Website:<a href="http://www.amonatbonk.tj ">www.amonatbonk.tj </a>`]
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ  “Имон”</b>
+                                                Адрес:Вилояти Суғд, шаҳри Хуҷанд, маҳаллаи 19, бинои 55<br>
+                                                Телефон:(+992) 92 822-23-53<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:info@mcf-imon.tj">	info@mcf-imon.tj</a><br>
+                                                Website:<a href="info@mcf-imon.tj">	info@mcf-imon.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “РУШДИ ВОДИИ ЗАРАФШОН”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “РУШДИ ВОДИИ ЗАРАФШОН”</b>
+                                                Адрес:Вилояти Суғд, шаҳри Панҷакент, хиёбони Рудакӣ, 14/1<br>
+                                                Телефон:(+992) 92-817-52-76, 92-780-57-62<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:kholov66@bk.ru">	kholov66@bk.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «МикроИнвест»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «МикроИнвест»</b>
+                                                Адрес:Вилояти Суғд, ш. Хуҷанд, кӯчаи Фирдавси 128<br>
+                                                Телефон:(+992) 92-770-66-65, 92-714-22-52<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:info@microinvest.tj">info@microinvest.tj </a><br>
+                                                Website:<a href="www.microinvest.tj">www.microinvest.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “Равнақ”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “Равнақ”</b>
+                                                Адрес:Вилояти Суғд, ш. Хуҷанд, хиёбони И.Сомони, хонаи 3, хуҷраи 7<br>
+                                                Телефон:(+992) 92 770 17 25, 92 767 62 48, (3422) 6 67 49<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:mcf_ravnaq@mail.ru">mcf_ravnaq@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “Роҳнамо”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “Роҳнамо”</b>
+                                                Адрес:ш. Душанбе, кӯчаи М.Турсунзода 53<br>
+                                                Телефон:(+992 37) 221-70-95, (+992 42) 780-00-14, 780-00-24<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:elena.reznik@mail.ru">elena.reznik@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “НУРИ ҲУМО”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “НУРИ ҲУМО”</b>
+                                                Адрес:ш.Душанбе, кучаи Лоиқ Шералӣ 3<br>
+                                                Телефон:(+992 37) 239-19-56, 239-19-57, 239-19-58<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:hamid@humo.tj">hamid@humo.tj</a><br>
+                                                Website:www.humo.tj<a href="">www.humo.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “Рушди Суғд”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “Рушди Суғд”</b>
+                                                Адрес:Вилояти Суғд, шаҳри Хуҷанд, кӯчаи ба номи Камоли Хуҷандӣ-83<br>
+                                                Телефон:(+992) 92-766-90-60, 92-827-21-08<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:info@rushdisughd.tj">info@rushdisughd.tj</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Боршуд»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Боршуд»</b>
+                                                Адрес:ш.Душанбе, н.Сино, к. Навбаҳор-29<br>
+                                                Телефон:(+992) 934-41-66-66, (+992) 934-44-94-15<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:Farrukhj94@mail.ru ">Farrukh j94@mail.ru </a><br>
+                                                Website:<a href="www.borshud.tj">www.borshud.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Ҳамёрӣ»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Ҳамёрӣ»</b>
+                                                Адрес:Вилояти Суғд, ш.Хуҷанд, кӯчаи М.Танбурӣ, хонаи 46"б"<br>
+                                                Телефон:(+992 3422) 6-72-75, 927-50-26-83, 918-41-69-75<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:nek_ruz@mail.ru">nek_ruz@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “ИМДОДИ ХУТАЛ”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “ИМДОДИ ХУТАЛ”</b>
+                                                Адрес:Вилояти Хатлон, шаҳри Кӯлоб, кӯчаи Н. Хувайдуллоев, хонаи 13, ҳуҷраи 30<br>
+                                                Телефон:(+992 3387) 918- 45-67-17, 918-31-05-97<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:imdodi-khytal@mail.ru">imdodi-khytal@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “САРВАТИ ВАХШ”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “САРВАТИ ВАХШ”</b>
+                                                Адрес:Вилояти Хатлон, шаҳри Бохтар кӯчаи Шоймардонов, 25<br>
+                                                Телефон:(+992 3222) 3-61-42, (44) 620-11-11, 918-58-98-46,918-93-89-42<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:sarvati.vakhsh@mail.ru ">sarvati.vakhsh@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Имконият»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Имконият»</b>
+                                                Адрес:Вилояти Хатлон, ш. Бохтар, кӯчаи Гафуров, 10<br>
+                                                Телефон:(+992 3222) 2-23-90, 918-61-79-35, 919-06-68-28<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:imkoniyat@mail.ru">imkoniyat@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Зар»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Зар»</b>
+                                                Адрес:ш. Душанбе, хиёбони Сино, 110<br>
+                                                Телефон:(+992 44) 600-25-22, 935-14-51-06, 935-14-51-01<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:zarlending@mail.ru">zarlending@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Чилучор Чашма»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Чилучор Чашма»</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Шаҳритус, кӯчаи Рӯдакӣ, хонаи 24<br>
+                                                Телефон:(+992 3240) 2-19-54<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “Эҳёи кӯҳистон”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “Эҳёи кӯҳистон”</b>
+                                                Адрес:Ноҳияи Ҷиргатол, кӯчаи Сомонӣ 12<br>
+                                                Телефон:900-00-44-79, 909-15-91-03, 918 75-54-62, 909-13-91-03<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:ehyo@mail.ru">ehyo@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Сарпараст»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Сарпараст»</b>
+                                                Адрес:Вилояти Суғд, шаҳри Хуҷанд, кӯчаи Шота Руставели 44<br>
+                                                Телефон:(+992) 92-555-99-95, 92-714-22-52, 92-709-56-65, 92-555-16-66<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:mсf@sarparast.t">mсf@sarparast.t</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “ЗАЙНАЛОБИДДИН 1”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “ЗАЙНАЛОБИДДИН 1”</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Ҷиликул кӯчаи Пролетарская, 22<br>
+                                                Телефон:(+992 3252) 2-19-48, 935-86-44-16<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «МАДИНА»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «МАДИНА»</b>
+                                                Адрес:Вилояти ВМКБ, ш.Хоруғ, кӯчаи Ленин, 66<br>
+                                                Телефон:(+992) 93 552 48 48<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:ngomadina@ramble.ru">ngomadina@ramble.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “ТУГАРАКИЁН”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “ТУГАРАКИЁН”</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Восеъ, ҷамоати деҳоти “Тугарак”<br>
+                                                Телефон:(+992) 918-89-88-51,988-03-77-89<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ «Барор»`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ «Барор»</b>
+                                                Адрес:Вилояти Суғд, ш.Хуҷанд, кӯчаи Камоли Хуҷандӣ, 142, ҳуҷраи 6<br>
+                                                Телефон:+992 3422) 6-01-27, (+992) 92-832-91-19,
+                                                92 854-56-00<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:mcfbaror2006@rambler.ru">mcfbaror2006@rambler.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “ПАХТАОБОД”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “ПАХТАОБОД”</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Восеъ, ҷамоати деҳоти М. Вайсов, деҳаи Чорбоғ<br>
+                                                Телефон:(+992) 918-66-19-09<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “ДЕХКОНАРИК”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “ДЕХКОНАРИК”</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Фархор, ҷамоати Деҳқонариқ, деҳаи Арча<br>
+                                                Телефон:(+992) 907-93-49-16, 907-37-13-47<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:eshonov66@mail.ru">eshonov66@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “Қуллаи Умед”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “Қуллаи Умед”</b>
+                                                Адрес:ноҳияи Тавилдара, ҷамоати деҳоти “Чилдара”<br>
+                                                Телефон:(+992 3156) 6-00-02, 98 104-26-60<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ “СОЛИҲИН”`,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ “СОЛИҲИН”</b>
+                                                Адрес:Вилояти Хатлон, ноҳияи Восеъ, ҷамоати деҳоти “Мичурин” деҳаи Анористон<br>
+                                                Телефон:(+992) 988-59-45-35<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:bakht_mehnat@mail.ru">bakht_mehnat@mail.ru</a><br>
+                                                Website:<a href=""></a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ  “Фонди бозтамвил” `,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ  “Фонди бозтамвил” </b>
+                                                Адрес:шаҳри Душанбе, н.Шоҳмансур, кӯчаи Истаравшан, 18<br>
+                                                Телефон:+992 433 77 77 70<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:office@rfund.tj">office@rfund.tj</a><br>
+                                                Website:<a href="www.rfund.tj">www.rfund.tj</a>`]
+                                            },
+                                            {
+                                                id:"0010030",
+                                                ru:`ФҚХ  “Мададгор-Д” `,
+                                                className:"",
+                                                img:"",
+                                                bgImg:" ",
+                                                data:[`<b>ФҚХ  “Мададгор-Д” </b>
+                                                Адрес:Вилояти Хатлон, ш. Кулоб, ҷамоати деҳоти Даҳана, деҳаи Даҳана<br>
+                                                Телефон:+992 985 92 02 51<br>
+                                                Факс: <br>
+                                                Email:<a href="mailto:"></a><br>
+                                                Website:<a href=""></a>`]
                                             }
                                         ]
                                     },
